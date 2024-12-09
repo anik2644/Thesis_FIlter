@@ -1,0 +1,143 @@
+-----------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------
+-----------------------------------------------------
+-----------------------------
+------------
+----
+C:\Users\anik\AppData\Local\Programs\Python\Python312\python.exe BertSCORE\bert_score\testBertScore.py --s "C:\Users\anik\Desktop\bengali-stemmer-dev\filtersource.jsonl" --o "C:\Users\anik\Desktop\bengali-stemmer-dev\BertSCORE\bert_score\testBertOutput.jsonl" 
+
+
+C:\Users\anik\AppData\Local\Programs\Python\Python312\python.exe BertSCORE\bert_score\filterBanglaBert.py --j "C:\Users\anik\Desktop\bengali-stemmer-dev\BertSCORE\bert_score\testBertOutput.jsonl" --o "C:\Users\anik\Desktop\bengali-stemmer-dev\BertSCORE\filtered_paraphrases.jsonl" --l 0.895 --u 0.985
+
+
+C:\Users\anik\AppData\Local\Programs\Python\Python312\python.exe PincFilter/filterPINC.py --l "C:\Users\anik\Desktop\bengali-stemmer-dev\BertSCORE\filtered_paraphrases.jsonl" --t "C:\Users\anik\Desktop\bengali-stemmer-dev\PincFilter\filteredoutput.jsonl" --lower 0.50 --upper 0.95
+
+
+C:\Users\anik\AppData\Local\Programs\Python\Python312\python.exe ParaPhaseCountFiltering\filter.py --input_file "C:\Users\anik\Desktop\bengali-stemmer-dev\PincFilter\filteredoutput.jsonl" --output_file "C:\Users\anik\Desktop\bengali-stemmer-dev\finaloutput.jsonl"
+
+
+then ru seperateParaphase to prepare readyforHF
+
+the above are the latest; 10 December, 2024;
+-------------
+------------------------------
+----------------------------------------------------------
+----------------------------------------------------------------------
+--------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------
+
+
+
+
+python PincFilter/filterPINC.py --l "C:\Users\anik1\Documents\Thesis\bengali-stemmer-dev\bengali-stemmer-dev\filtersource.jsonl" --t "C:\Users\anik1\Documents\Thesis\bengali-stemmer-dev\bengali-stemmer-dev\PincFilter\filteredoutput.jsonl" --p 0.9 && ^
+python BertSCORE\bert_score\testBertScore.py --s "C:\Users\anik1\Documents\Thesis\bengali-stemmer-dev\bengali-stemmer-dev\PincFilter\filteredoutput.jsonl" --o "C:\Users\anik1\Documents\Thesis\bengali-stemmer-dev\bengali-stemmer-dev\BertSCORE\bert_score\testBertOutput.jsonl" && ^
+python BertSCORE\bert_score\filterBanglaBert.py --j "C:\Users\anik1\Documents\Thesis\bengali-stemmer-dev\bengali-stemmer-dev\BertSCORE\bert_score\testBertOutput.jsonl" --o "C:\Users\anik1\Documents\Thesis\bengali-stemmer-dev\bengali-stemmer-dev\BertSCORE\filtered_paraphrases.jsonl" --l 0.80 --u 0.90 && ^
+python N-Gram/n_gram_repeatition_filter.py --input_file "C:\Users\anik1\Documents\Thesis\bengali-stemmer-dev\bengali-stemmer-dev\BertSCORE\filtered_paraphrases.jsonl" --output_file "C:\Users\anik1\Documents\Thesis\bengali-stemmer-dev\bengali-stemmer-dev\N-Gram\NGram_filteredOutput.jsonl" && ^
+python Punctation\punctuation_filter.py --input_file "C:\Users\anik1\Documents\Thesis\bengali-stemmer-dev\bengali-stemmer-dev\N-Gram\NGram_filteredOutput.jsonl" --output_file "C:\Users\anik1\Documents\Thesis\bengali-stemmer-dev\bengali-stemmer-dev\Punctation\punctuationFilterOutput.jsonl" && ^
+python ParaPhaseCountFiltering\filter.py --input_file "C:\Users\anik1\Documents\Thesis\bengali-stemmer-dev\bengali-stemmer-dev\Punctation\punctuationFilterOutput.jsonl" --output_file "C:\Users\anik1\Documents\Thesis\bengali-stemmer-dev\bengali-stemmer-dev\finaloutput.jsonl"
+
+
+
+
+python PincFilter/filterPINC.py --l "C:\Users\anik1\Documents\Thesis\bengali-stemmer-dev\bengali-stemmer-dev\filtersource.jsonl" --t "C:\Users\anik1\Documents\Thesis\bengali-stemmer-dev\bengali-stemmer-dev\PincFilter\filteredoutput.jsonl" --p 0.90
+
+
+python BertSCORE\bert_score\testBertScore.py --s "C:\Users\anik1\Documents\Thesis\bengali-stemmer-dev\bengali-stemmer-dev\PincFilter\filteredoutput.jsonl" --o "C:\Users\anik1\Documents\Thesis\bengali-stemmer-dev\bengali-stemmer-dev\BertSCORE\bert_score\testBertOutput.jsonl" 
+
+
+python BertSCORE\bert_score\filterBanglaBert.py --j "C:\Users\anik1\Documents\Thesis\bengali-stemmer-dev\bengali-stemmer-dev\BertSCORE\bert_score\testBertOutput.jsonl" --o "C:\Users\anik1\Documents\Thesis\bengali-stemmer-dev\bengali-stemmer-dev\BertSCORE\filtered_paraphrases.jsonl" --l 0.10 --u 0.90
+
+
+python N-Gram/n_gram_repeatition_filter.py --input_file "C:\Users\anik1\Documents\Thesis\bengali-stemmer-dev\bengali-stemmer-dev\BertSCORE\filtered_paraphrases.jsonl" --output_file "C:\Users\anik1\Documents\Thesis\bengali-stemmer-dev\bengali-stemmer-dev\N-Gram\NGram_filteredOutput.jsonl" 
+
+
+python Punctation\punctuation_filter.py --input_file "C:\Users\anik1\Documents\Thesis\bengali-stemmer-dev\bengali-stemmer-dev\N-Gram\NGram_filteredOutput.jsonl" --output_file "C:\Users\anik1\Documents\Thesis\bengali-stemmer-dev\bengali-stemmer-dev\Punctation\punctuationFilterOutput.jsonl"
+
+
+python ParaPhaseCountFiltering\filter.py --input_file "C:\Users\anik1\Documents\Thesis\bengali-stemmer-dev\bengali-stemmer-dev\Punctation\punctuationFilterOutput.jsonl" --output_file "C:\Users\anik1\Documents\Thesis\bengali-stemmer-dev\bengali-stemmer-dev\finaloutput.jsonl"
+
+
+//  python BertSCORE\bert_score\logBERT.py --s "C:\Users\anik1\Documents\Thesis\bengali-stemmer-dev\bengali-stemmer-dev\filtersource.jsonl" --o "C:\Users\anik1\Documents\Thesis\bengali-stemmer-dev\bengali-stemmer-dev\BertSCORE\bert_score\testBertOutput.jsonl" 
+
+-----------------------------------------------------
+python BertSCORE\bert_score\testBertScore.py --s "C:\Users\anik1\Documents\Thesis\bengali-stemmer-dev\bengali-stemmer-dev\filtersource.jsonl" --o "C:\Users\anik1\Documents\Thesis\bengali-stemmer-dev\bengali-stemmer-dev\BertSCORE\bert_score\testBertOutput.jsonl" 
+
+
+python BertSCORE\bert_score\filterBanglaBert.py --j "C:\Users\anik1\Documents\Thesis\bengali-stemmer-dev\bengali-stemmer-dev\BertSCORE\bert_score\testBertOutput.jsonl" --o "C:\Users\anik1\Documents\Thesis\bengali-stemmer-dev\bengali-stemmer-dev\BertSCORE\filtered_paraphrases.jsonl" --l 0.895 --u 0.985
+
+
+python PincFilter/filterPINC.py --l "C:\Users\anik1\Documents\Thesis\bengali-stemmer-dev\bengali-stemmer-dev\BertSCORE\filtered_paraphrases.jsonl" --t "C:\Users\anik1\Documents\Thesis\bengali-stemmer-dev\bengali-stemmer-dev\PincFilter\filteredoutput.jsonl" --lower 0.50 --upper 0.95
+
+
+python N-Gram/n_gram_repeatition_filter.py --input_file "C:\Users\anik1\Documents\Thesis\bengali-stemmer-dev\bengali-stemmer-dev\PincFilter\filteredoutput.jsonl" --output_file "C:\Users\anik1\Documents\Thesis\bengali-stemmer-dev\bengali-stemmer-dev\N-Gram\NGram_filteredOutput.jsonl" 
+
+
+python Punctation\punctuation_filter.py --input_file "C:\Users\anik1\Documents\Thesis\bengali-stemmer-dev\bengali-stemmer-dev\N-Gram\NGram_filteredOutput.jsonl" --output_file "C:\Users\anik1\Documents\Thesis\bengali-stemmer-dev\bengali-stemmer-dev\Punctation\punctuationFilterOutput.jsonl"
+
+
+python ParaPhaseCountFiltering\filter.py --input_file "C:\Users\anik1\Documents\Thesis\bengali-stemmer-dev\bengali-stemmer-dev\Punctation\punctuationFilterOutput.jsonl" --output_file "C:\Users\anik1\Documents\Thesis\bengali-stemmer-dev\bengali-stemmer-dev\finaloutput.jsonl"
+
+
+
+-----------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------
+-----------------------------------------------------
+-----------------------------
+------------
+----
+-------------
+------------------------------
+----------------------------------------------------------
+----------------------------------------------------------------------
+--------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------
+C:\Users\anik\AppData\Local\Programs\Python\Python312\python.exe BertSCORE\bert_score\testBertScore.py --s "C:\Users\anik\Desktop\bengali-stemmer-dev\filtersource.jsonl" --o "C:\Users\anik\Desktop\bengali-stemmer-dev\BertSCORE\bert_score\testBertOutput.jsonl" 
+
+
+C:\Users\anik\AppData\Local\Programs\Python\Python312\python.exe BertSCORE\bert_score\filterBanglaBert.py --j "C:\Users\anik\Desktop\bengali-stemmer-dev\BertSCORE\bert_score\testBertOutput.jsonl" --o "C:\Users\anik\Desktop\bengali-stemmer-dev\BertSCORE\filtered_paraphrases.jsonl" --l 0.895 --u 0.985
+
+
+C:\Users\anik\AppData\Local\Programs\Python\Python312\python.exe PincFilter/filterPINC.py --l "C:\Users\anik\Desktop\bengali-stemmer-dev\BertSCORE\filtered_paraphrases.jsonl" --t "C:\Users\anik\Desktop\bengali-stemmer-dev\PincFilter\filteredoutput.jsonl" --lower 0.50 --upper 0.95
+
+
+\\\\
+
+C:\Users\anik\AppData\Local\Programs\Python\Python312\python.exe BertSCORE\bert_score\testBertScore.py --s "C:\Users\anik\Desktop\bengali-stemmer-dev\filtersource.jsonl" --o "C:\Users\anik\Desktop\bengali-stemmer-dev\BertSCORE\bert_score\testBertOutput.jsonl" 
+
+
+C:\Users\anik\AppData\Local\Programs\Python\Python312\python.exe BertSCORE\bert_score\filterBanglaBert.py --j "C:\Users\anik\Desktop\bengali-stemmer-dev\BertSCORE\bert_score\testBertOutput.jsonl" --o "C:\Users\anik\Desktop\bengali-stemmer-dev\BertSCORE\filtered_paraphrases.jsonl" --l 0.895 --u 0.985
+
+
+C:\Users\anik\AppData\Local\Programs\Python\Python312\python.exe PincFilter/filterPINC.py --l "C:\Users\anik\Desktop\bengali-stemmer-dev\BertSCORE\filtered_paraphrases.jsonl" --t "C:\Users\anik\Desktop\bengali-stemmer-dev\PincFilter\filteredoutput.jsonl" --lower 0.50 --upper 0.95
+
+
+C:\Users\anik\AppData\Local\Programs\Python\Python312\python.exe ParaPhaseCountFiltering\filter.py --input_file "C:\Users\anik\Desktop\bengali-stemmer-dev\PincFilter\filteredoutput.jsonl" --output_file "C:\Users\anik\Desktop\bengali-stemmer-dev\finaloutput.jsonl"
+
+\\\\
+
+
+C:\Users\anik\AppData\Local\Programs\Python\Python312\python.exe N-Gram/n_gram_repeatition_filter.py --input_file "C:\Users\anik\Desktop\bengali-stemmer-dev\PincFilter\filteredoutput.jsonl" --output_file "C:\Users\anik\Desktop\bengali-stemmer-dev\N-Gram\NGram_filteredOutput.jsonl" 
+
+
+C:\Users\anik\AppData\Local\Programs\Python\Python312\python.exe Punctation\punctuation_filter.py --input_file "C:\Users\anik\Desktop\bengali-stemmer-dev\N-Gram\NGram_filteredOutput.jsonl" --output_file "C:\Users\anik\Desktop\bengali-stemmer-dev\Punctation\punctuationFilterOutput.jsonl"
+
+
+C:\Users\anik\AppData\Local\Programs\Python\Python312\python.exe ParaPhaseCountFiltering\filter.py --input_file "C:\Users\anik\Desktop\bengali-stemmer-dev\Punctation\punctuationFilterOutput.jsonl" --output_file "C:\Users\anik\Desktop\bengali-stemmer-dev\finaloutput.jsonl"
+
+
+
+
+
+C:\Users\anik\AppData\Local\Programs\Python\Python312\python.exe
+
+2
+4
+23
