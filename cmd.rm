@@ -6,7 +6,7 @@
 -----------------------------
 ------------
 ----
-C:\Users\anik\AppData\Local\Programs\Python\Python312\python.exe BertSCORE\bert_score\testBertScore.py --s "C:\Users\anik\Desktop\bengali-stemmer-dev\filtersource.jsonl" --o "C:\Users\anik\Desktop\bengali-stemmer-dev\BertSCORE\bert_score\testBertOutput.jsonl" 
+C:\Users\anik\AppData\Local\Programs\Python\Python312\python.exe BertSCORE\bert_score\testBertScore.py --s "C:\Users\anik1\Desktop\bengali-stemmer-dev\filtersource.jsonl" --o "C:\Users\anik1\Desktop\bengali-stemmer-dev\BertSCORE\bert_score\testBertOutput.jsonl" 
 
 
 C:\Users\anik\AppData\Local\Programs\Python\Python312\python.exe BertSCORE\bert_score\filterBanglaBert.py --j "C:\Users\anik\Desktop\bengali-stemmer-dev\BertSCORE\bert_score\testBertOutput.jsonl" --o "C:\Users\anik\Desktop\bengali-stemmer-dev\BertSCORE\filtered_paraphrases.jsonl" --l 0.895 --u 0.985
@@ -29,8 +29,7 @@ the above are the latest; 10 December, 2024;
 -------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------------------
-
-
+python BertSCORE\bert_score\testBertScore.py --s "C:\Users\anik1\Desktop\bengali-stemmer-dev\filtersource.jsonl" --o "C:\Users\anik1\Desktop\bengali-stemmer-dev\BertSCORE\bert_score\testBertOutput.jsonl" 
 
 
 python PincFilter/filterPINC.py --l "C:\Users\anik1\Documents\Thesis\bengali-stemmer-dev\bengali-stemmer-dev\filtersource.jsonl" --t "C:\Users\anik1\Documents\Thesis\bengali-stemmer-dev\bengali-stemmer-dev\PincFilter\filteredoutput.jsonl" --p 0.9 && ^
